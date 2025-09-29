@@ -16,4 +16,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  preview: {
+  port: 10000,
+  host: true,
+  allowedHosts: ['urlclipr.onrender.com'],
+},
 }); 
