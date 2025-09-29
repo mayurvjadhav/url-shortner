@@ -3,25 +3,25 @@ import { BarLoader } from "react-spinners";
 import { useEffect, useState } from "react";
 import { Filter } from "lucide-react";
 
-import { Input } from "@/components/ui/input";
-import useFetch from "@/hooks/use-fetch";
+import { Input } from "../components/ui/input";
+import UseFetch from "../hooks/Use-fetch";
 
-import { getUrls } from "@/db/apiUrls";
-import { getClicksForUrls } from "@/db/apiClicks";
-import { UrlState } from "@/context";
-import { Error } from "@/components/ui/Error";
-import { LinkCard } from "@/components/Link-card";
-import { CreateLink } from "@/components/Create-link";
+import { getUrls } from "../db/apiUrls";
+import { getClicksForUrls } from "../db/apiClicks";
+import { UrlState } from "../context";
+import { Error } from "../components/ui/Error";
+import { LinkCard } from "../components/Link-card";
+import { CreateLink } from "../components/Create-link";
 
 export const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { user } = UrlState();
-  const { loading, error, data: urls, fn: fnUrls } = useFetch(getUrls, user.id);
+  const { loading, error, data: urls, fn: fnUrls } = UseFetch(getUrls, user.id);
   const {
     loading: loadingClicks,
     data: clicks,
     fn: fnClicks,
-  } = useFetch(
+  } = UseFetch(
     getClicksForUrls,
     urls?.map((url) => url.id)
   );
@@ -36,7 +36,7 @@ export const Dashboard = () => {
 
   useEffect(() => {
     if (urls?.length) fnClicks();
-  }, [urls?.length]);
+  }, [ urls?.length]);
 
   return (
     <div className="flex flex-col gap-8">
