@@ -26,7 +26,7 @@ export const Header = () => {
     <>
       <nav className="py-4 flex justify-between items-center">
         <Link to="/">
-          <span className="text-xl font-extrabold">Shrinkly</span>
+          <span className="text-xl font-extrabold">Clipr</span>
         </Link>
         <div>
           {!user ? (
