@@ -12,9 +12,9 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { signup } from "@/db/apiAuth";
+import { signup } from "../db/apiAuth";
 import { BeatLoader } from "react-spinners";
-import useFetch from "@/hooks/use-fetch";
+import UseFetch from "../hooks/Use-fetch";
 
 const Signup = () => {
   let [searchParams] = useSearchParams();
@@ -38,7 +38,7 @@ const Signup = () => {
     }));
   };
 
-  const { loading, error, fn: fnSignup, data } = useFetch(signup, formData);
+  const { loading, error, fn: fnSignup, data } = UseFetch(signup, formData);
 
   useEffect(() => {
     if (error === null && data) {
