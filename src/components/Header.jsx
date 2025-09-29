@@ -10,10 +10,9 @@ import {
 } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { LinkIcon, LogOut } from "lucide-react";
-import { UrlState } from "@/Context";
-import { useEffect } from "react";
-import useFetch from "@/hooks/Use-fetch";
-import { logOut } from "@/db/apiAuth";
+import { UrlState } from "../Context";
+import UseFetch from "../hooks/Use-fetch";
+import { logOut } from "../db/apiAuth";
 import { BarLoader } from "react-spinners";
 
 export const Header = () => {
@@ -21,7 +20,7 @@ export const Header = () => {
 
   const { user, fetchUser } = UrlState();
 
-  const { loading, fn: fnLogout } = useFetch(logOut);
+  const { loading, fn: fnLogout } = UseFetch(logOut);
 
   return (
     <>
