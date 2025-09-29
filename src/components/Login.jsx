@@ -5,17 +5,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../components/ui/card";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { BeatLoader } from "react-spinners";
 import { Error } from "./ui/Error";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
-import useFetch from "@/hooks/Use-fetch";
-import { login } from "@/db/apiAuth";
+import UseFetch from "../hooks/Use-fetch";
+import { login } from "../db/apiAuth";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { UrlState } from "@/Context";
+import { UrlState } from "../Context";
 
 export const Login = () => {
   let [searchParams] = useSearchParams();
@@ -37,7 +37,7 @@ export const Login = () => {
     }));
   };
 
-  const { loading, error, fn: fnLogin, data } = useFetch(login, formData);
+  const { loading, error, fn: fnLogin, data } = UseFetch(login, formData);
   const { fetchUser } = UrlState();
 
   useEffect(() => {
