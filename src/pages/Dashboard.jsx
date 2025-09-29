@@ -8,7 +8,7 @@ import UseFetch from "../hooks/Use-fetch";
 
 import { getUrls } from "../db/apiUrls";
 import { getClicksForUrls } from "../db/apiClicks";
-import { UrlState } from "../context";
+import { UrlState } from "../Context";
 import { Error } from "../components/ui/Error";
 import { LinkCard } from "../components/Link-card";
 import { CreateLink } from "../components/Create-link";
