@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Copy, Download, LinkIcon, Trash } from "lucide-react";
-import useFetch from "@/hooks/Use-fetch";
-import { deleteUrl } from "@/db/apiUrls";
+import UseFetch from "../hooks/Use-fetch";
+import { deleteUrl } from "../db/apiUrls";
 import { Button } from "./ui/button";
 import { BeatLoader } from "react-spinners";
 
@@ -26,7 +26,7 @@ export const LinkCard = ({ url = [], fetchUrls }) => {
   };
   const baseURL = window.location.origin;
 
-  const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, url.id);
+  const { loading: loadingDelete, fn: fnDelete } = UseFetch(deleteUrl, url.id);
 
   return (
     <div className="flex flex-col md:flex-row gap-5 border p-4 bg-gray-900 rounded-lg">
