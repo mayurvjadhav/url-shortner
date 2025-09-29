@@ -1,5 +1,5 @@
-import { UrlState } from "@/Context";
-import { Button } from "@/components/ui/button";
+import { UrlState } from "../Context";
+import { Button } from "../components/ui/button";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
@@ -9,15 +9,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import { BeatLoader } from "react-spinners";
 import { Error } from "./ui/Error";
 import { Input } from "./ui/input";
 import { Card } from "./ui/card";
 import { QRCode } from "react-qrcode-logo";
 import * as yup from "yup";
-import { createUrl } from "@/db/apiUrls";
-import useFetch from "@/hooks/Use-fetch";
+import { createUrl } from "../db/apiUrls";
+import UseFetch from "../hooks/Use-fetch";
 
 export const CreateLink = () => {
   const { user } = UrlState();
@@ -56,7 +56,7 @@ export const CreateLink = () => {
     error,
     data,
     fn: fnCreateUrl,
-  } = useFetch(createUrl, { ...formValues, user_id: user.id });
+  } = UseFetch(createUrl, { ...formValues, user_id: user.id });
 
   useEffect(() => {
     if (error === null && data) {
