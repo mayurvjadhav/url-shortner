@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
 import { UrlState } from "../Context";
 import { getClicksForUrl } from "../db/apiClicks";
 import { deleteUrl, getUrl } from "../db/apiUrls";
-import useFetch from "../hooks/use-fetch";
+import UseFetch from "../hooks/Use-fetch";
 import { Copy, Download, LinkIcon, Trash } from "lucide-react";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
