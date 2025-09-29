@@ -38,7 +38,7 @@ export const LinkPage = () => {
     data: url,
     fn,
     error,
-  } = useFetch(getUrl, { id, user_id: user?.id });
+  } = UseFetch(getUrl, { id, user_id: user?.id });
 
   const baseURL = window.location.origin;
 
@@ -46,9 +46,9 @@ export const LinkPage = () => {
     loading: loadingStats,
     data: stats,
     fn: fnStats,
-  } = useFetch(getClicksForUrl, id);
+  } = UseFetch(getClicksForUrl, id);
 
-  const { loading: loadingDelete, fn: fnDelete } = useFetch(deleteUrl, id);
+  const { loading: loadingDelete, fn: fnDelete } = UseFetch(deleteUrl, id);
 
   useEffect(() => {
     fn();
