@@ -39,11 +39,7 @@ export const Landing = () => {
           Shorten
         </Button>
       </form>
-      <img
-        src="src\public\Screenshot_68.jpg"
-        alt=""
-        className="h-full my-11 md:px-11"
-      />
+        <br/>  
       <Accordion type="multiple" collapsible="true" className="w-full md:px-11">
         <AccordionItem value="item-1">
           <AccordionTrigger>
