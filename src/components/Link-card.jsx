@@ -4,8 +4,17 @@ import UseFetch from "../hooks/Use-fetch";
 import { deleteUrl } from "../db/apiUrls";
 import { Button } from "./ui/button";
 import { BeatLoader } from "react-spinners";
+import React, { useEffect, useState } from 'react';
 
 export const LinkCard = ({ url = [], fetchUrls }) => {
+
+    const [siteUrl, setSitetUrl] = useState('');
+
+  useEffect(() => {
+    // Get the current full URL
+    setSitetUrl(window.location.hostname);
+  }, []);
+  
   const downloadImage = () => {
     const imageUrl = url?.qr;
     const fileName = url?.title; // Desired file name for the downloaded image
@@ -40,7 +49,7 @@ export const LinkCard = ({ url = [], fetchUrls }) => {
           {url?.title}
         </span>
         <span className="text-2xl text-blue-400 font-bold hover:underline cursor-pointer">
-          https://shrinkly{url?.custom_url ? url?.custom_url : url.short_url}
+          https://{siteUrl}/{url?.custom_url ? url?.custom_url : url.short_url}
         </span>
         <span className="flex items-center gap-1 hover:underline cursor-pointer">
           <LinkIcon className="p-1" />
