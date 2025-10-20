@@ -33,18 +33,13 @@ export const Landing = () => {
           value={longUrl}
           placeholder="Enter URL to shorten"
           onChange={(e) => setLongUrl(e.target.value)}
-          className="h-full flex-1 py-4 px-4"
+          className="h-full flex-1 py-4"
         />
         <Button className="h-full" type="submit" variant="destructive">
           Shorten
         </Button>
       </form>
-      <img
-        src="src\public\Screenshot_68.jpg"
-        alt=""
-        className="h-full my-11 md:px-11"
-      />
-      <Accordion type="multiple" collapsible="true" className="w-full md:px-11">
+      <Accordion type="multiple" collapsible="true" className="w-full py-30 md:px-11 px-5">
         <AccordionItem value="item-1">
           <AccordionTrigger>
             How does this URL shortener works?
