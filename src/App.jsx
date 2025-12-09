@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout } from "./layouts/app.layout";
-import { Landing } from "./pages/landing";
+import { Landing } from "./pages/Landing";
 import { Dashboard } from "./pages/dashboard";
 import { Auth } from "./pages/auth";
 import { RedirectLink } from "./pages/redirect-link";
