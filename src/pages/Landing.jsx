@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "../components/ui/accordion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -39,7 +39,11 @@ export const Landing = () => {
           Shorten
         </Button>
       </form>
-      <Accordion type="multiple" collapsible="true" className="w-full py-30 md:px-11 px-5">
+      <Accordion
+        type="multiple"
+        collapsible="true"
+        className="w-full py-30 md:px-11 px-5"
+      >
         <AccordionItem value="item-1">
           <AccordionTrigger>
             How does this URL shortener works?

@@ -1,8 +1,13 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Signup from "@/components/Signup";
-import { Login } from "@/components/Login";
-import { UrlState } from "@/Context";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "../components/ui/tabs";
+import Signup from "../components/Signup";
+import { Login } from "../components/Login";
+import { UrlState } from "../Context";
 import { useEffect } from "react";
 
 export const Auth = () => {
